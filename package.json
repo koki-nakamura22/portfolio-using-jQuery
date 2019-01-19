@@ -21,6 +21,7 @@
   "homepage": "https://github.com/koki-nakamura22/portfolio-using-jQuery#readme",
   "devDependencies": {
     "jquery": "^3.3.1",
+    "json-loader": "^0.5.7",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",

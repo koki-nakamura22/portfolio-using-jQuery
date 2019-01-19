@@ -1,0 +1,27 @@
+[
+  {
+    "link": "about",
+    "icon": "fas fa-info",
+    "caption": "About"
+  },
+  {
+    "link": "services",
+    "icon": "fas fa-bars",
+    "caption": "Services"
+  },
+  {
+    "link": "resume",
+    "icon": "fas fa-file-alt",
+    "caption": "Resume"
+  },
+  {
+    "link": "portfolio",
+    "icon": "fas fa-th-list",
+    "caption": "Portfolio"
+  },
+  {
+    "link": "contact",
+    "icon": "fas fa-envelope",
+    "caption": "Contact"
+  }
+]
