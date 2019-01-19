@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-using-jQuery",
+  "version": "1.0.0",
+  "description": "portfolio-using-jQuery",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --config ./config/webpack.config.development.js",
+    "build:dev": "npx webpack --config ./config/webpack.config.development.js",
+    "build:pro": "npx webpack --config ./config/webpack.config.production.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koki-nakamura22/portfolio-using-jQuery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koki-nakamura22/portfolio-using-jQuery/issues"
+  },
+  "homepage": "https://github.com/koki-nakamura22/portfolio-using-jQuery#readme",
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
+  }
+}
