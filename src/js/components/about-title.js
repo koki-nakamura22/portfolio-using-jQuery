@@ -1,4 +1,3 @@
-// import barItems from "../../../public/json/navigation-bar-items.json";
 import aboutTitleData from "../../../public/json/about-title.json";
 
 export default class AboutTitle {
