@@ -8,8 +8,12 @@ export default class Footer {
     <footer class="footer">
       <div class="section-heading">
         <p>
-          <strong>Koki Nakamura's portfolio page</strong> by
-          Koki Nakamura.
+          <strong>Koki Nakamura's portfolio page</strong> by Koki Nakamura.
+        </p>
+        <p>
+          &copy; 2019 Koki Nakamura
+        </p>
+        <p>
           The source code is licensed
           <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
         </p>
