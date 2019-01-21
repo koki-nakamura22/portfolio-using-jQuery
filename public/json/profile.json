@@ -1,0 +1,27 @@
+{
+  "address": "Ise-shi, Mie, Japan",
+  "phone": "+81-90-4447-2062",
+  "email": "koki.nakamura22@gmail.com",
+  "links": [
+    {
+      "caption": "GitHub",
+      "url": "https://github.com/koki-nakamura22/"
+    },
+    {
+      "caption": "LinkedIn",
+      "url": "https://www.linkedin.com/in/koki-nakamura/"
+    },
+    {
+      "caption": "Twitter",
+      "url": "https://twitter.com/j_levia/"
+    },
+    {
+      "caption": "Facebook",
+      "url": "https://www.facebook.com/koki.nakamura22/"
+    },
+    {
+      "caption": "Blog",
+      "url": "http://j-levia.hatenablog.jp/"
+    }
+  ]
+}
