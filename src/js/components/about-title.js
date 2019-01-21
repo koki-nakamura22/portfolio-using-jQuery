@@ -6,7 +6,7 @@ export default class AboutTitle {
   }
 
   render() {
-    $aboutTitle = $(`
+    let $aboutTitle = $(`
     <div class="section-heading">
       <h3 class="title is-2">${aboutTitleData.title}</h3>
       <h4 class="subtitle is-5">${aboutTitleData.subTitle}</h4>
