@@ -1,0 +1,21 @@
+{
+  "title": "Services",
+  "description": "What can I do for you?",
+  "services": [
+    {
+      "title": "Windows Desktop Application Development",
+      "detail": [
+        "Develop Windows Desktop Application using C# and Oracle Database or postgreSQL.",
+        "Or can develope without using a databases."
+      ]
+    },
+    {
+      "title": "Front End Web Development",
+      "detail": "Develop Front End using latest standards with HTML5/CSS3 with added funtionality using JavaScript and jQuery."
+    },
+    {
+      "title": "Back End Web Development",
+      "detail": "Develop Back End application using C#(ASP.NET Web API) or Java and Oracle Database or postgreSQL."
+    }
+  ]
+}

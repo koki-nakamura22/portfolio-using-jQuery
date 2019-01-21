@@ -2,6 +2,7 @@ import NavigationBar from "./components/navigation-bar";
 import Header from "./components/header";
 import About from "./components/about";
 import SkillsTags from "./components/skills-tags";
+import Services from "./components/services";
 import Footer from "./components/footer";
 
 $(() => {
@@ -20,6 +21,10 @@ $(() => {
   // Render skills tags.
   let skillsTags = new SkillsTags("#skills-tags");
   skillsTags.render();
+
+  // Render services.
+  let services = new Services("#services");
+  services.render();
 
   // Render footer.
   let footer = new Footer("#footer");
