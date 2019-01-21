@@ -1,6 +1,7 @@
 import NavigationBar from "./components/navigation-bar";
 import Header from "./components/header";
 import About from "./components/about";
+import SkillsTags from "./components/skills-tags";
 import Footer from "./components/footer";
 
 $(() => {
@@ -15,6 +16,10 @@ $(() => {
   // Render about.
   let about = new About("#about-area");
   about.render();
+
+  // Render skills tags.
+  let skillsTags = new SkillsTags("#skills-tags");
+  skillsTags.render();
 
   // Render footer.
   let footer = new Footer("#footer");

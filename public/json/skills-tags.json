@@ -1,0 +1,59 @@
+[
+  {
+    "skill": "C#"
+  },
+  {
+    "skill": "Windows Forms"
+  },
+  {
+    "skill": "ASP.NET Web API"
+  },
+  {
+    "skill": "Visual Studio"
+  },
+  {
+    "skill": "Java"
+  },
+  {
+    "skill": "Eclipse"
+  },
+  {
+    "skill": "SQL"
+  },
+  {
+    "skill": "PL/SQL"
+  },
+  {
+    "skill": "PL/pgSQL"
+  },
+  {
+    "skill": "HTML5"
+  },
+  {
+    "skill": "CSS3"
+  },
+  {
+    "skill": "jQuery"
+  },
+  {
+    "skill": "Bulma"
+  },
+  {
+    "skill": "Webpack"
+  },
+  {
+    "skill": "Oracle Database"
+  },
+  {
+    "skill": "PostgreSQL"
+  },
+  {
+    "skill": "Git"
+  },
+  {
+    "skill": "Apache Subversion"
+  },
+  {
+    "skill": "Visual Studio Code"
+  }
+]
