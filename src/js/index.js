@@ -3,6 +3,7 @@ import Header from "./components/header";
 import About from "./components/about";
 import SkillsTags from "./components/skills-tags";
 import Services from "./components/services";
+import Resume from "./components/resume";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 
@@ -26,6 +27,10 @@ $(() => {
   // Render services.
   let services = new Services("#services");
   services.render();
+
+  // Render resume.
+  let resume = new Resume("#resume");
+  resume.render();
 
   // Render contact.
   let contact = new Contact("#contact");
