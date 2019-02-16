@@ -38,7 +38,7 @@ export default class Profile {
         $profileItems.append($(`
         <tr>
           <td>${caption}</td>
-          <td>${content}</td>
+          <td class="word-break-all">${content}</td>
         </tr>
         `));
       }

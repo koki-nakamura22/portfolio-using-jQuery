@@ -1,3 +1,10 @@
+/* td {
+  word-break: break-all;
+} */
+.word-break-all {
+  word-break: break-all;
+}
+
 .has-same-height .card {
   height: 320px;
   overflow: hidden;
