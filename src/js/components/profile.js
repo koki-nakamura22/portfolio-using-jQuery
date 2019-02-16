@@ -36,10 +36,15 @@ export default class Profile {
       } else {
         let caption = itemLabel.charAt(0).toUpperCase() + itemLabel.slice(1) + ":";
         let content = profileData[itemLabel];
+        if (itemLabel == "email") {
+          content = `<a href="#contact">${Utils.escapeHtml(content)}</a>`;
+        } else {
+          content = Utils.escapeHtml(content);
+        }
         $profileItems.append($(`
         <tr>
           <td>${Utils.escapeHtml(caption)}</td>
-          <td class="word-break-all">${Utils.escapeHtml(content)}</td>
+          <td class="word-break-all">${content}</td>
         </tr>
         `));
       }
