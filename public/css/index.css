@@ -16,6 +16,19 @@ th {
   font-weight: bold;
 }
 
+#profile-picture .card-image,
+#profile-picture .card-image .image {
+  width: inherit;
+  height: inherit;
+}
+
+#profile-picture .card-image .image img {
+  width: inherit;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .skills-content .media {
   margin: 0 !important;
   padding: 4px !important;
