@@ -16,6 +16,9 @@ $(() => {
   $("#project-modal .modal-card .modal-card-foot #close-dialog").on("click", () => {
     closeProjectModalDialog();
   });
+  $("#project-modal .modal-card header .delete").on("click", () => {
+    closeProjectModalDialog();
+  });
   function closeProjectModalDialog() {
     $("#project-modal").removeClass("is-active");
   }
