@@ -14,6 +14,11 @@
   text-align: center;
 }
 
+#profile,
+#profile .card-content {
+  height: inherit;
+}
+
 .table-profile td,
 th {
   border: none !important;
