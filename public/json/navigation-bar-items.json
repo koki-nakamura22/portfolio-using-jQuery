@@ -15,9 +15,9 @@
     "caption": "Resume"
   },
   {
-    "link": "portfolio",
+    "link": "projects",
     "icon": "fas fa-th-list",
-    "caption": "Portfolio"
+    "caption": "Projects"
   },
   {
     "link": "contact",

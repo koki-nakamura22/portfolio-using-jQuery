@@ -40,3 +40,22 @@ th {
   margin-top: 1em;
   margin-bottom: 6em;
 }
+
+.can-open-content {
+  cursor: pointer;
+}
+
+.show-more-projects-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.hide-projects-button {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
