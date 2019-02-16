@@ -4,7 +4,7 @@ export default class Utils {
       let newLineWord = "<br>";
       let html = "";
       for (let line of arr) {
-        html += `${line}${newLineWord}`;
+        html += `${this.escapeHtml(line)}${newLineWord}`;
       }
       let lastIndex = html.lastIndexOf(newLineWord);
       html = html.substring(0, lastIndex);
@@ -12,5 +12,15 @@ export default class Utils {
     } else {
       return arr;
     }
+  }
+
+  static escapeHtml(str){
+    str = str.replace(/&/g, '&amp;');
+    str = str.replace(/>/g, '&gt;');
+    str = str.replace(/</g, '&lt;');
+    str = str.replace(/"/g, '&quot;');
+    str = str.replace(/'/g, '&#x27;');
+    str = str.replace(/`/g, '&#x60;');
+    return str;
   }
 }

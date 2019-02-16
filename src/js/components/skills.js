@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import skillsData from "../../../public/json/skills.json";
 
 export default class Skills {
@@ -23,10 +24,10 @@ export default class Skills {
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>${skill.technology}:</strong> <br />
+              <strong>${Utils.escapeHtml(skill.technology)}:</strong> <br />
               <progress
                 class="progress is-primary"
-                value="${skill.degreeOfSkill}"
+                value="${Utils.escapeHtml(skill.degreeOfSkill)}"
                 max="100"
               ></progress>
             </p>

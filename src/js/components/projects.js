@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import ProjectsItem from "./projects-item";
 import projectsData from "../../../public/json/projects.json";
 
@@ -13,8 +14,8 @@ export default class Projects {
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <h3 class="title is-2">${projectsData.title}</h3>
-          <h4 class="subtitle is-5">${projectsData.subTitle}</h4>
+          <h3 class="title is-2">${Utils.escapeHtml(projectsData.title)}</h3>
+          <h4 class="subtitle is-5">${Utils.escapeHtml(projectsData.subTitle)}</h4>
         </div>
         <br />
 

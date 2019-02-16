@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import profileData from "../../../public/json/profile.json";
 
 export default class Profile {
@@ -29,7 +30,7 @@ export default class Profile {
         let links = profileData[itemLabel];
         for (let link of links) {
           $links.append($(`
-          <a href="${link.url}" class="button is-link" target="_blank">${link.caption}</a>
+          <a href="${Utils.escapeHtml(link.url)}" class="button is-link" target="_blank">${Utils.escapeHtml(link.caption)}</a>
           `));
         }
       } else {
@@ -37,8 +38,8 @@ export default class Profile {
         let content = profileData[itemLabel];
         $profileItems.append($(`
         <tr>
-          <td>${caption}</td>
-          <td class="word-break-all">${content}</td>
+          <td>${Utils.escapeHtml(caption)}</td>
+          <td class="word-break-all">${Utils.escapeHtml(content)}</td>
         </tr>
         `));
       }

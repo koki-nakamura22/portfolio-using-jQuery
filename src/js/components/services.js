@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import servicesData from "../../../public/json/services.json";
 
 export default class Services {
@@ -8,8 +9,8 @@ export default class Services {
   render() {
     let $services = $(`
     <div class="section-heading">
-      <h3 class="title is-2">${servicesData.title}</h3>
-      <h4 class="subtitle is-5">${servicesData.description}</h4>
+      <h3 class="title is-2">${Utils.escapeHtml(servicesData.title)}</h3>
+      <h4 class="subtitle is-5">${Utils.escapeHtml(servicesData.description)}</h4>
     </div>
     `);
     let $container = $('<div class="container"></div>');
@@ -36,18 +37,18 @@ export default class Services {
         let newLineWord = "<br>";
         detail = "";
         for (let line of data.detail) {
-          detail += `${line}${newLineWord}`;
+          detail += `${Utils.escapeHtml(line)}${newLineWord}`;
         }
         let lastIndex = detail.lastIndexOf(newLineWord);
         detail = detail.substring(0, lastIndex);
       } else {
-        detail = data.detail;
+        detail = Utils.escapeHtml(data.detail);
       }
       return $(`
       <div class="column">
         <div class="box">
           <div class="content">
-            <h4 class="title is-5">${data.title}</h4>
+            <h4 class="title is-5">${Utils.escapeHtml(data.title)}</h4>
             ${detail}
           </div>
         </div>

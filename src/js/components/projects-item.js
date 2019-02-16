@@ -14,24 +14,24 @@ export default class ProjectsItem {
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
-            ${this.projectData.projectName}
+            ${Utils.escapeHtml(this.projectData.projectName)}
           </p>
         </header>
            
         <div class="card-content">
           <div id="content">
             <div>
-              <strong>${labels.summary}</strong>
+              <strong>${Utils.escapeHtml(labels.summary)}</strong>
               <p>${Utils.arrayToHtml(this.projectData.summary)}</p>
               <br>
             </div>
             <div>
-              <strong>${labels.term}</strong>
-              <p>${this.projectData.termFrom} ~ ${this.projectData.termTo}</p>
+              <strong>${Utils.escapeHtml(labels.term)}</strong>
+              <p>${Utils.escapeHtml(this.projectData.termFrom)} ~ ${Utils.escapeHtml(this.projectData.termTo)}</p>
               <br>
             </div>
             <div>
-              <strong>${labels.usedProgrammingLanguageAndLibrary}</strong>
+              <strong>${Utils.escapeHtml(labels.usedProgrammingLanguageAndLibrary)}</strong>
               <p>${Utils.arrayToHtml(this.projectData.usedProgrammingLanguageAndLibrary)}</p>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default class ProjectsItem {
     `);
     $projectItem.find(".card-footer .card-footer-item").on("click", () => {
       let $dialogTitle = $("#project-modal .modal-card .modal-card-head .modal-card-title");
-      $dialogTitle.text(this.projectData.projectName);
+      $dialogTitle.text(Utils.escapeHtml(this.projectData.projectName));
       
       let labels = projectsData.projectsLabel;
       let $dialogBody = $("#project-modal .modal-card .modal-card-body");
@@ -68,7 +68,7 @@ export default class ProjectsItem {
 
       function generateHTMLCode(label, detail) {
         return `
-        <h1>${label}</h1>
+        <h1>${Utils.escapeHtml(label)}</h1>
         <p>
           ${Utils.arrayToHtml(detail)}
         </p>
@@ -77,8 +77,8 @@ export default class ProjectsItem {
 
       function generateTermHTMLCode(label, from, to) {
         let html = `
-        <h1>${label}</h1>
-        <p>${from} ~ ${to}</p>
+        <h1>${Utils.escapeHtml(label)}</h1>
+        <p>${Utils.escapeHtml(from)} ~ ${Utils.escapeHtml(to)}</p>
         `;
         return html;
       }

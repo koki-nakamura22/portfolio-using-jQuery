@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import skillsTagsData from "../../../public/json/skills-tags.json";
 
 export default class SkillsTags {
@@ -11,7 +12,7 @@ export default class SkillsTags {
     `);
     for (let skillsTag of skillsTagsData) {
       $skillsTags.append($(`
-      <span class="tag is-light">${skillsTag.skill}</span>
+      <span class="tag is-light">${Utils.escapeHtml(skillsTag.skill)}</span>
       `));
     }
     $(this.targetId).append($skillsTags);

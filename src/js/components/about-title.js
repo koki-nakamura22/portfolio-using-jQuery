@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import aboutTitleData from "../../../public/json/about-title.json";
 
 export default class AboutTitle {
@@ -8,10 +9,10 @@ export default class AboutTitle {
   render() {
     let $aboutTitle = $(`
     <div class="section-heading">
-      <h3 class="title is-2">${aboutTitleData.title}</h3>
-      <h4 class="subtitle is-5">${aboutTitleData.subTitle}</h4>
+      <h3 class="title is-2">${Utils.escapeHtml(aboutTitleData.title)}</h3>
+      <h4 class="subtitle is-5">${Utils.escapeHtml(aboutTitleData.subTitle)}</h4>
       <div class="container">
-        ${aboutTitleData.selfIntroduction}
+        ${Utils.escapeHtml(aboutTitleData.selfIntroduction)}
       </div>
     </div>
     `);

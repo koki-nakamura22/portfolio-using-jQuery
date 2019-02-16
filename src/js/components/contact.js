@@ -1,3 +1,4 @@
+import Utils from "../utils";
 import profileData from "../../../public/json/profile.json";
 import contactData from "../../../public/json/contact.json";
 
@@ -11,8 +12,8 @@ export default class Contact {
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <h3 class="title is-2">${contactData.title}</h3>
-          <h4 class="subtitle is-5">${contactData.subTitle}</h4>
+          <h3 class="title is-2">${Utils.escapeHtml(contactData.title)}</h3>
+          <h4 class="subtitle is-5">${Utils.escapeHtml(contactData.subTitle)}</h4>
         </div>
         <br />
 
@@ -20,7 +21,7 @@ export default class Contact {
           <div class="column is-6 is-offset-3">
             <div class="box">
               <div class="field">
-                <label class="label">${contactData.nameLabel}</label>
+                <label class="label">${Utils.escapeHtml(contactData.nameLabel)}</label>
                 <div class="control">
                   <input
                     id="name"
@@ -33,7 +34,7 @@ export default class Contact {
               </div>
 
               <div class="field">
-                <label class="label">${contactData.subjectLabel}</label>
+                <label class="label">${Utils.escapeHtml(contactData.subjectLabel)}</label>
                 <div class="control">
                   <input
                     id="subject"
@@ -46,7 +47,7 @@ export default class Contact {
               </div>
 
               <div class="field">
-                <label class="label">${contactData.messageLabel}</label>
+                <label class="label">${Utils.escapeHtml(contactData.messageLabel)}</label>
                 <div class="control">
                   <textarea
                     id="message"
@@ -61,7 +62,7 @@ export default class Contact {
                 <div class="control">
                   <button id="submit-button" class="button is-link is-large">
                     <span class="icon"> <i class="fas fa-envelope"></i> </span>
-                    <span>${contactData.submitLabel}</span>
+                    <span>${Utils.escapeHtml(contactData.submitLabel)}</span>
                   </button>
                 </div>
               </div>
