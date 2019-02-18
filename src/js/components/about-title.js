@@ -12,7 +12,7 @@ export default class AboutTitle {
       <h3 class="title is-2">${Utils.escapeHtml(aboutTitleData.title)}</h3>
       <h4 class="subtitle is-5">${Utils.escapeHtml(aboutTitleData.subTitle)}</h4>
       <div class="container">
-        ${Utils.escapeHtml(aboutTitleData.selfIntroduction)}
+        ${Utils.arrayToHtml(aboutTitleData.selfIntroduction)}
       </div>
     </div>
     `);
