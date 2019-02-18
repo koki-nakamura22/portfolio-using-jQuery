@@ -36,7 +36,11 @@ export default class Profile {
       } else {
         let caption = itemLabel.charAt(0).toUpperCase() + itemLabel.slice(1) + ":";
         let content = profileData[itemLabel];
-        if (itemLabel == "email") {
+        if (itemLabel == "phone") {
+          if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+            content = `<a href=tel:${Utils.escapeHtml(content.replace(/-/g, ''))}>${Utils.escapeHtml(content)}</a>`
+          }
+        } else if (itemLabel == "email") {
           content = `<a href="#contact">${Utils.escapeHtml(content)}</a>`;
         } else {
           content = Utils.escapeHtml(content);
