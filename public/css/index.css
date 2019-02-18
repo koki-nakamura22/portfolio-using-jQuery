@@ -65,6 +65,12 @@ th {
 
 .can-open-content {
   cursor: pointer;
+  color: #3273dc;
+  text-decoration: none;
+}
+
+.can-open-content:hover {
+  color: #363636;
 }
 
 .show-more-projects-button {
