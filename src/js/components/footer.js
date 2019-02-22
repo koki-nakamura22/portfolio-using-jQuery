@@ -1,8 +1,6 @@
-export default class Footer {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-  
+import BaseComponent from "./base-component";
+
+export default class Footer extends BaseComponent {
   render() {
     let $footer = $(`
     <footer class="footer">

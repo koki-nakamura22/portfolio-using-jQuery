@@ -1,8 +1,9 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 
-export default class NavigationBarItem {
+export default class NavigationBarItem extends BaseComponent {
   constructor(targetId, jsonData) {
-    this.targetId = targetId;
+    super(targetId);
     this.batItemData = jsonData;
   }
 

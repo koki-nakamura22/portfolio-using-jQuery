@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import resumeData from "../../json/resume.json";
 
-export default class Resume {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Resume extends BaseComponent {
   render() {
     let $resume = $(`
     <section class="section">

@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import headerData from "../../json/header.json";
 
-export default class Header {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Header extends BaseComponent {
   render() {
     let $header = $(`
     <section class="hero is-link is-fullheight is-fullheight-with-navbar">

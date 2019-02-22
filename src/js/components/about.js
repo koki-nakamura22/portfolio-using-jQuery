@@ -1,13 +1,10 @@
+import BaseComponent from "./base-component";
 import AboutTitle from "./about-title";
 import Profile from "./profile";
 import ProfilePicture from "./profile-picture";
 import Skills from "./skills";
 
-export default class About {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class About extends BaseComponent {
   render() {
     let $about = $(`
     <section class="section" id="about"></section>

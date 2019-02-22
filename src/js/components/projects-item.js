@@ -1,9 +1,10 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import projectsData from "../../json/projects.json";
 
-export default class ProjectsItem {
+export default class ProjectsItem extends BaseComponent {
   constructor(targetId, jsonData) {
-    this.targetId = targetId;
+    super(targetId);
     this.projectData = jsonData;
   }
 

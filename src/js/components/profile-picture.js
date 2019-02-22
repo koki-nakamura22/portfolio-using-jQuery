@@ -1,10 +1,7 @@
+import BaseComponent from "./base-component";
 import selfPortrait from "../../images/self-face-photos.jpg";
 
-export default class ProfilePicture {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class ProfilePicture extends BaseComponent {
   render() {
     let $profilePicture = $(`
     <div class="card-image">

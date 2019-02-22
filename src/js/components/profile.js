@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import profileData from "../../json/profile.json";
 
-export default class Profile {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Profile extends BaseComponent {
   render() {
     let $profile = $(`
     <div class="card-content">

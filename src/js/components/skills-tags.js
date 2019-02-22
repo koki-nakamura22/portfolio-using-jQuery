@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import skillsTagsData from "../../json/skills-tags.json";
 
-export default class SkillsTags {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class SkillsTags extends BaseComponent {
   render() {
     let $skillsTags = $(`
     <div class="tags custom-tags"></div>

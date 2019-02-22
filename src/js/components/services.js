@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import servicesData from "../../json/services.json";
 
-export default class Services {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Services extends BaseComponent {
   render() {
     let $services = $(`
     <div class="section-heading">

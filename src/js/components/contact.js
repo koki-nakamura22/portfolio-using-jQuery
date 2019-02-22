@@ -1,12 +1,9 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import profileData from "../../json/profile.json";
 import contactData from "../../json/contact.json";
 
-export default class Contact {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Contact extends BaseComponent {
   render() {
     let $contact = $(`
     <section class="section">

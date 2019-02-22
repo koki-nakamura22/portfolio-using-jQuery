@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import aboutTitleData from "../../json/about-title.json";
 
-export default class AboutTitle {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class AboutTitle extends BaseComponent {
   render() {
     let $aboutTitle = $(`
     <div class="section-heading">

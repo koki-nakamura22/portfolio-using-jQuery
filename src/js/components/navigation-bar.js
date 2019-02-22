@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import NavigationBarItem from "./navigation-bar-item";
 import barItems from "../../json/navigation-bar-items.json";
 
-export default class NavigationBar {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class NavigationBar extends BaseComponent {
   render() {
     // Create navigation bar.
     let $navigationBar = $(`<nav class="navbar is-link is-fixed-top">

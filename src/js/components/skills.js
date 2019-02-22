@@ -1,11 +1,8 @@
+import BaseComponent from "./base-component";
 import Utils from "../utils";
 import skillsData from "../../json/skills.json";
 
-export default class Skills {
-  constructor(targetId) {
-    this.targetId = targetId;
-  }
-
+export default class Skills extends BaseComponent {
   render() {
     let $skills = $(`
     <div class="card">
