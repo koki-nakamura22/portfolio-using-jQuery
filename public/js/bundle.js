@@ -86,6 +86,117 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/css/index.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/index.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".word-break-all {\r\n  word-break: break-all;\r\n}\r\n\r\n.has-same-height .card {\r\n  height: 320px;\r\n  overflow: hidden;\r\n}\r\n\r\n.card-content h3 {\r\n  text-align: center;\r\n}\r\n\r\n#profile,\r\n#profile .card-content {\r\n  height: inherit;\r\n}\r\n\r\n.table-profile td,\r\nth {\r\n  border: none !important;\r\n}\r\n\r\n.table-profile td:first-of-type {\r\n  font-weight: bold;\r\n}\r\n\r\n#profile-picture .card-image,\r\n#profile-picture .card-image .image {\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n#profile-picture .card-image .image img {\r\n  width: inherit;\r\n  height: inherit;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n\r\n.skills-content .media {\r\n  margin: 0 !important;\r\n  padding: 4px !important;\r\n  border: 0 !important;\r\n}\r\n\r\n.skills-content .progress {\r\n  height: 4px !important;\r\n}\r\n\r\n.custom-tags {\r\n  text-align: center !important;\r\n  display: block;\r\n}\r\n\r\n.portfolio-container .card {\r\n  margin-bottom: 2em;\r\n}\r\n\r\n.section-heading {\r\n  text-align: center;\r\n  margin-top: 1em;\r\n  margin-bottom: 6em;\r\n}\r\n\r\n.can-open-content {\r\n  cursor: pointer;\r\n  color: #3273dc;\r\n  text-decoration: none;\r\n}\r\n\r\n.can-open-content:hover {\r\n  color: #363636;\r\n}\r\n\r\n.show-more-projects-button {\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  width: 80%;\r\n}\r\n\r\n.hide-projects-button {\r\n  margin-top: 20px;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  width: 80%;\r\n}\r\n\r\n#project-modal .modal-card header {\r\n  display: block;\r\n}\r\n\r\n#project-modal .modal-card header .delete {\r\n  float: right;\r\n}\r\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return '@media ' + item[2] + '{' + content + '}';
+      } else {
+        return content;
+      }
+    }).join('');
+  }; // import a list of modules into the list
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (i = 0; i < modules.length; i++) {
+      var item = modules[i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || '';
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+  return '/*# ' + data + ' */';
+}
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -10462,14 +10573,835 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./public/json/navigation-bar-items.json":
-/*!***********************************************!*\
-  !*** ./public/json/navigation-bar-items.json ***!
-  \***********************************************/
-/*! exports provided: 0, 1, 2, 3, 4, default */
-/***/ (function(module) {
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = [{"link":"about","icon":"fas fa-info","caption":"About"},{"link":"services","icon":"fas fa-bars","caption":"Services"},{"link":"resume","icon":"fas fa-file-alt","caption":"Resume"},{"link":"portfolio","icon":"fas fa-th-list","caption":"Portfolio"},{"link":"contact","icon":"fas fa-envelope","caption":"Contact"}];
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
+/***/ "./src/css/index.css":
+/*!***************************!*\
+  !*** ./src/css/index.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./index.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/images/self-face-photos.jpg":
+/*!*****************************************!*\
+  !*** ./src/images/self-face-photos.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "4f7e5dcb58bc7faa9e5f3350f8a74531.jpg";
+
+/***/ }),
+
+/***/ "./src/js/components/about-title.js":
+/*!******************************************!*\
+  !*** ./src/js/components/about-title.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AboutTitle; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_about_title_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/about-title.json */ "./src/json/about-title.json");
+/* harmony import */ var _json_about_title_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_about_title_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class AboutTitle {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $aboutTitle = $(`
+    <div class="section-heading">
+      <h3 class="title is-2">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_about_title_json__WEBPACK_IMPORTED_MODULE_1___default.a.title)}</h3>
+      <h4 class="subtitle is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_about_title_json__WEBPACK_IMPORTED_MODULE_1___default.a.subTitle)}</h4>
+      <div class="container">
+        ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].arrayToHtml(_json_about_title_json__WEBPACK_IMPORTED_MODULE_1___default.a.selfIntroduction)}
+      </div>
+    </div>
+    `);
+    $(this.targetId).append($aboutTitle);
+  }
+}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/about.js":
+/*!************************************!*\
+  !*** ./src/js/components/about.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
+/* harmony import */ var _about_title__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./about-title */ "./src/js/components/about-title.js");
+/* harmony import */ var _profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile */ "./src/js/components/profile.js");
+/* harmony import */ var _profile_picture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile-picture */ "./src/js/components/profile-picture.js");
+/* harmony import */ var _skills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./skills */ "./src/js/components/skills.js");
+
+
+
+
+
+class About {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $about = $(`
+    <section class="section" id="about"></section>
+    `);
+    $(this.targetId).append($about);
+
+    // Render title.
+    let aboutTitle = new _about_title__WEBPACK_IMPORTED_MODULE_0__["default"]("#about-title");
+    aboutTitle.render();
+
+    // Render profile.
+    let profile = new _profile__WEBPACK_IMPORTED_MODULE_1__["default"]("#profile");
+    profile.render();
+
+    // Render profile picture.
+    let profilePicture = new _profile_picture__WEBPACK_IMPORTED_MODULE_2__["default"]("#profile-picture");
+    profilePicture.render();
+
+    // Render skills.
+    let skills = new _skills__WEBPACK_IMPORTED_MODULE_3__["default"]("#skills");
+    skills.render();
+  }
+}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/contact.js":
+/*!**************************************!*\
+  !*** ./src/js/components/contact.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Contact; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_profile_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/profile.json */ "./src/json/profile.json");
+/* harmony import */ var _json_profile_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_profile_json__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _json_contact_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../json/contact.json */ "./src/json/contact.json");
+/* harmony import */ var _json_contact_json__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_json_contact_json__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+class Contact {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $contact = $(`
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h3 class="title is-2">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.title)}</h3>
+          <h4 class="subtitle is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.subTitle)}</h4>
+        </div>
+        <br />
+
+        <div class="columns">
+          <div class="column is-6 is-offset-3">
+            <div class="box">
+              <div class="field">
+                <label class="label">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.nameLabel)}</label>
+                <div class="control">
+                  <input
+                    id="name"
+                    class="input"
+                    type="text"
+                    placeholder="Name input"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.subjectLabel)}</label>
+                <div class="control">
+                  <input
+                    id="subject"
+                    class="input"
+                    type="text"
+                    placeholder="Subject input"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.messageLabel)}</label>
+                <div class="control">
+                  <textarea
+                    id="message"
+                    class="textarea"
+                    placeholder="Message input"
+                    value=""
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="field is-grouped has-text-centered">
+                <div class="control">
+                  <button id="submit-button" class="button is-link is-large">
+                    <span class="icon"> <i class="fas fa-envelope"></i> </span>
+                    <span>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_contact_json__WEBPACK_IMPORTED_MODULE_2___default.a.submitLabel)}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    `);
+    let $submitButton = $contact.find("#submit-button");
+    $submitButton.on("click", () => {
+      let newLineChars = "%0D%0A";
+      let subject = $("#subject").val();
+      let message = `Hi! I'm ${$("#name").val()}. I will send you an e-mail from your portfolio page.
+      ${newLineChars}${newLineChars}${$("#message").val()}${newLineChars}`;
+      window.location.href = `mailto:${_json_profile_json__WEBPACK_IMPORTED_MODULE_1___default.a.email}?subject=${subject}&body=${message}`;
+    });
+    $(this.targetId).append($contact);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/footer.js":
+/*!*************************************!*\
+  !*** ./src/js/components/footer.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
+class Footer {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+  
+  render() {
+    let $footer = $(`
+    <footer class="footer">
+      <div class="section-heading">
+        <p>
+          <strong>Koki Nakamura's portfolio page</strong> by Koki Nakamura.
+        </p>
+        <p>
+          &copy; 2019 Koki Nakamura
+        </p>
+        <p>
+          The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+        <p>
+          This web page is created based on 
+          <a href="https://github.com/dansup/bulma-templates/blob/master/templates/personal.html">Portfolio</a>
+           in 
+          <a href="https://github.com/dansup/bulma-templates">Bulma Templates.</a>
+        </p>
+      </div>
+    </footer>
+    `);
+
+    $(this.targetId).append($footer);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/header.js":
+/*!*************************************!*\
+  !*** ./src/js/components/header.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_header_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/header.json */ "./src/json/header.json");
+/* harmony import */ var _json_header_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_header_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Header {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $header = $(`
+    <section class="hero is-link is-fullheight is-fullheight-with-navbar">
+      <div class="hero-body">
+        <div class="container">
+          ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_header_json__WEBPACK_IMPORTED_MODULE_1___default.a.greeting)}
+          <h1 class="title is-1">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_header_json__WEBPACK_IMPORTED_MODULE_1___default.a.title)}</h1>
+          <h2 class="subtitle is-3">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_header_json__WEBPACK_IMPORTED_MODULE_1___default.a.subTitle)}</h2>
+        </div>
+      </div>
+    </section>   
+    `);
+
+    $(this.targetId).append($header);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -10483,6 +11415,9 @@ module.exports = [{"link":"about","icon":"fas fa-info","caption":"About"},{"link
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavigationBarItem; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+
+
 class NavigationBarItem {
   constructor(targetId, jsonData) {
     this.targetId = targetId;
@@ -10491,9 +11426,9 @@ class NavigationBarItem {
 
   render() {
     let $navigationBarItem = $(`
-    <a class="navbar-item" href="#${this.batItemData.link}">
-      <span class="icon"> <i class="${this.batItemData.icon}"></i> </span>
-      <span>${this.batItemData.caption}</span>
+    <a class="navbar-item" href="#${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.batItemData.link)}">
+      <span class="icon"> <i class="${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.batItemData.icon)}"></i> </span>
+      <span>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.batItemData.caption)}</span>
     </a>
     `);
 
@@ -10516,8 +11451,8 @@ class NavigationBarItem {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavigationBar; });
 /* harmony import */ var _navigation_bar_item__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation-bar-item */ "./src/js/components/navigation-bar-item.js");
-/* harmony import */ var _public_json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../public/json/navigation-bar-items.json */ "./public/json/navigation-bar-items.json");
-var _public_json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../../public/json/navigation-bar-items.json */ "./public/json/navigation-bar-items.json", 1);
+/* harmony import */ var _json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/navigation-bar-items.json */ "./src/json/navigation-bar-items.json");
+/* harmony import */ var _json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -10547,7 +11482,7 @@ class NavigationBar {
     $(this.targetId).append($navigationBar);
 
     // Add navigation bar items.
-    for (let jsonData of _public_json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1__) {
+    for (let jsonData of _json_navigation_bar_items_json__WEBPACK_IMPORTED_MODULE_1___default.a) {
       let $itemForAdd = new _navigation_bar_item__WEBPACK_IMPORTED_MODULE_0__["default"](
         ".navbar .navbar-menu .navbar-end",
         jsonData
@@ -10570,6 +11505,525 @@ class NavigationBar {
 
 /***/ }),
 
+/***/ "./src/js/components/profile-picture.js":
+/*!**********************************************!*\
+  !*** ./src/js/components/profile-picture.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProfilePicture; });
+/* harmony import */ var _images_self_face_photos_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../images/self-face-photos.jpg */ "./src/images/self-face-photos.jpg");
+/* harmony import */ var _images_self_face_photos_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_images_self_face_photos_jpg__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class ProfilePicture {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $profilePicture = $(`
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img
+          src="${_images_self_face_photos_jpg__WEBPACK_IMPORTED_MODULE_0___default.a}"
+          alt=""
+        />
+      </figure>
+    </div>
+    `);
+    $(this.targetId).append($profilePicture);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/profile.js":
+/*!**************************************!*\
+  !*** ./src/js/components/profile.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Profile; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_profile_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/profile.json */ "./src/json/profile.json");
+/* harmony import */ var _json_profile_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_profile_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Profile {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $profile = $(`
+    <div class="card-content">
+      <h3 class="title is-4">Profile</h3>
+      <div class="content">
+        <table class="table-profile">
+          <tr>
+            <th colspan="1"></th>
+            <th colspan="2"></th>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <div class="buttons has-addons is-centered">
+      </div>
+    </div>
+    `);
+    let $profileItems = $profile.find(".table-profile");
+    let $links = $profile.find(".buttons");
+    for (let itemLabel in _json_profile_json__WEBPACK_IMPORTED_MODULE_1___default.a) {
+      if (itemLabel == "links") {
+        let links = _json_profile_json__WEBPACK_IMPORTED_MODULE_1___default.a[itemLabel];
+        for (let link of links) {
+          $links.append($(`
+          <a href="${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(link.url)}" class="button is-link" target="_blank">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(link.caption)}</a>
+          `));
+        }
+      } else {
+        let caption = itemLabel.charAt(0).toUpperCase() + itemLabel.slice(1) + ":";
+        let content = _json_profile_json__WEBPACK_IMPORTED_MODULE_1___default.a[itemLabel];
+        if (itemLabel == "phone") {
+          if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+            content = `<a href=tel:${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(content.replace(/-/g, ''))}>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(content)}</a>`
+          }
+        } else if (itemLabel == "email") {
+          content = `<a href="#contact">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(content)}</a>`;
+        } else {
+          content = _utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(content);
+        }
+        $profileItems.append($(`
+        <tr>
+          <td>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(caption)}</td>
+          <td class="word-break-all">${content}</td>
+        </tr>
+        `));
+      }
+    }
+    $(this.targetId).append($profile);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/projects-item.js":
+/*!********************************************!*\
+  !*** ./src/js/components/projects-item.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectsItem; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_projects_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/projects.json */ "./src/json/projects.json");
+/* harmony import */ var _json_projects_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_projects_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class ProjectsItem {
+  constructor(targetId, jsonData) {
+    this.targetId = targetId;
+    this.projectData = jsonData;
+  }
+
+  render() {
+    let labels = _json_projects_json__WEBPACK_IMPORTED_MODULE_1___default.a.projectsLabel;
+    let $projectItem = $(`
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.projectData.projectName)}
+          </p>
+        </header>
+           
+        <div class="card-content">
+          <div id="content">
+            <div>
+              <strong>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(labels.summary)}</strong>
+              <p>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].arrayToHtml(this.projectData.summary)}</p>
+              <br>
+            </div>
+            <div>
+              <strong>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(labels.term)}</strong>
+              <p>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.projectData.termFrom)} ~ ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.projectData.termTo)}</p>
+              <br>
+            </div>
+            <div>
+              <strong>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(labels.usedProgrammingLanguageAndLibrary)}</strong>
+              <p>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].arrayToHtml(this.projectData.usedProgrammingLanguageAndLibrary)}</p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="card-footer">
+          <div class="card-footer-item can-open-content">
+            <p>Show Detail</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    `);
+    $projectItem.find(".card-footer .card-footer-item").on("click", () => {
+      let $dialogTitle = $("#project-modal .modal-card .modal-card-head .modal-card-title");
+      $dialogTitle.text(_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(this.projectData.projectName));
+      
+      let labels = _json_projects_json__WEBPACK_IMPORTED_MODULE_1___default.a.projectsLabel;
+      let $dialogBody = $("#project-modal .modal-card .modal-card-body");
+      $dialogBody.empty();
+      $dialogBody.append($(`
+      <div class="content">
+        ${generateHTMLCode(labels.summary, this.projectData.summary)}
+        ${generateTermHTMLCode(labels.term, this.projectData.termFrom, this.projectData.termTo)}
+        ${generateHTMLCode(labels.usedProgrammingLanguageAndLibrary, this.projectData.usedProgrammingLanguageAndLibrary)}
+        ${generateHTMLCode(labels.usedDatabase, this.projectData.usedDatabase)}
+        ${generateHTMLCode(labels.usedTools, this.projectData.usedTools)}
+        ${generateHTMLCode(labels.role, this.projectData.role)}
+        ${generateHTMLCode(labels.workInCharge, this.projectData.workInCharge)}      
+      </div>
+      `));
+
+      $("#project-modal").addClass("is-active");
+
+      function generateHTMLCode(label, detail) {
+        return `
+        <h1>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(label)}</h1>
+        <p>
+          ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].arrayToHtml(detail)}
+        </p>
+        `;
+      }
+
+      function generateTermHTMLCode(label, from, to) {
+        let html = `
+        <h1>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(label)}</h1>
+        <p>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(from)} ~ ${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(to)}</p>
+        `;
+        return html;
+      }
+    });
+
+    $(this.targetId).append($projectItem);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/projects.js":
+/*!***************************************!*\
+  !*** ./src/js/components/projects.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Projects; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _projects_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects-item */ "./src/js/components/projects-item.js");
+/* harmony import */ var _json_projects_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../json/projects.json */ "./src/json/projects.json");
+/* harmony import */ var _json_projects_json__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_json_projects_json__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+class Projects {
+  constructor(targetId) {
+    this.targetId = targetId;
+    this.MAX_INIT_SHOW_ROW = 3;
+    this.MAX_COL = 3;
+  }
+
+  render() {
+    let $projects = $(`
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h3 class="title is-2">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_projects_json__WEBPACK_IMPORTED_MODULE_2___default.a.title)}</h3>
+          <h4 class="subtitle is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_projects_json__WEBPACK_IMPORTED_MODULE_2___default.a.subTitle)}</h4>
+        </div>
+        <br />
+
+        <div class="container projects-container">
+        </div>
+        <div id="show-more-projects-button" class="button is-medium show-more-projects-button">Show more</div>
+        <div id="hide-projects-button" class="button is-medium hide-projects-button">Hide</div>
+      </div>
+    </section>
+    `);
+    $(this.targetId).append($projects);
+    let row = 0;
+    let counter = 0;
+    let $projectsContainer = $projects.find(".projects-container");
+    for (let project of _json_projects_json__WEBPACK_IMPORTED_MODULE_2___default.a.projects) {
+      if (counter % this.MAX_COL == 0) {
+        row++;
+        let $rowForAppend = $(`<div id=row${row} class="columns"></div>`);
+        $projectsContainer.append($rowForAppend);
+        if (row > this.MAX_INIT_SHOW_ROW) {
+          $rowForAppend.hide();
+        }
+      }
+      let projectsItem = new _projects_item__WEBPACK_IMPORTED_MODULE_1__["default"](`${this.targetId} .projects-container #row${row}`, project);
+      projectsItem.render();
+      counter++;
+    }
+    $("#hide-projects-button").hide();
+
+    // Show Button click event
+    $("#show-more-projects-button").on("click", () => {
+      let rowCount = $projectsContainer.children().length;
+      for (let row = 0; row < rowCount; row++) {
+        $($projectsContainer.children()[row]).show();
+      }
+      $("#show-more-projects-button").hide();
+      $("#hide-projects-button").show();
+    });
+
+    // Hide Button click event
+    $("#hide-projects-button").on("click", () => {
+      let rowCount = $projectsContainer.children().length;
+      for (let row = 0; row < rowCount; row++) {
+        if (row >= this.MAX_INIT_SHOW_ROW) {
+          $($projectsContainer.children()[row]).hide();
+        }
+      }
+      $("#show-more-projects-button").show();
+      $("#hide-projects-button").hide();
+    });
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/resume.js":
+/*!*************************************!*\
+  !*** ./src/js/components/resume.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Resume; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_resume_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/resume.json */ "./src/json/resume.json");
+/* harmony import */ var _json_resume_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_resume_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Resume {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $resume = $(`
+    <section class="section">
+      <div class="section-heading">
+        <h3 class="title is-2">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_resume_json__WEBPACK_IMPORTED_MODULE_1___default.a.title)}</h3>
+        <h4 class="subtitle is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_resume_json__WEBPACK_IMPORTED_MODULE_1___default.a.subTitle)}</h4>
+        <a id="downloadResumeButton" href="${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_resume_json__WEBPACK_IMPORTED_MODULE_1___default.a.resumeFile)}" class="button is-link is-medium">
+          <span class="icon"> <i class="fas fa-file-alt"></i> </span>
+          <span>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_resume_json__WEBPACK_IMPORTED_MODULE_1___default.a.downloadButtonLabel)}</span>
+        </a>
+      </div>
+    </section>
+    `);
+    $(this.targetId).append($resume);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/services.js":
+/*!***************************************!*\
+  !*** ./src/js/components/services.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Services; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_services_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/services.json */ "./src/json/services.json");
+/* harmony import */ var _json_services_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_services_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Services {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $services = $(`
+    <div class="section-heading">
+      <h3 class="title is-2">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_services_json__WEBPACK_IMPORTED_MODULE_1___default.a.title)}</h3>
+      <h4 class="subtitle is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(_json_services_json__WEBPACK_IMPORTED_MODULE_1___default.a.description)}</h4>
+    </div>
+    `);
+    let $container = $('<div class="container"></div>');
+    let $columns = null;
+    for (let service of _json_services_json__WEBPACK_IMPORTED_MODULE_1___default.a.services) {
+      if($columns == null) {
+        $columns = $('<div class="columns"></div>');
+        $columns.append(generateColumn$DOM(service));
+      } else {
+        $columns.append(generateColumn$DOM(service));
+        $container.append($columns);
+        $columns = null;
+      }
+    }
+    if ($columns != null) {
+      $container.append($columns);
+    }
+    $services.append($container);
+    $(this.targetId).append($services);
+
+    function generateColumn$DOM(data) {
+      let detail;
+      if (data.detail instanceof Array) {
+        let newLineWord = "<br>";
+        detail = "";
+        for (let line of data.detail) {
+          detail += `${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(line)}${newLineWord}`;
+        }
+        let lastIndex = detail.lastIndexOf(newLineWord);
+        detail = detail.substring(0, lastIndex);
+      } else {
+        detail = _utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(data.detail);
+      }
+      return $(`
+      <div class="column">
+        <div class="box">
+          <div class="content">
+            <h4 class="title is-5">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(data.title)}</h4>
+            ${detail}
+          </div>
+        </div>
+      </div>
+      `);
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/skills-tags.js":
+/*!******************************************!*\
+  !*** ./src/js/components/skills-tags.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SkillsTags; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_skills_tags_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/skills-tags.json */ "./src/json/skills-tags.json");
+/* harmony import */ var _json_skills_tags_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_skills_tags_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class SkillsTags {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $skillsTags = $(`
+    <div class="tags custom-tags"></div>
+    `);
+    for (let skillsTag of _json_skills_tags_json__WEBPACK_IMPORTED_MODULE_1___default.a) {
+      $skillsTags.append($(`
+      <span class="tag is-light">${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(skillsTag.skill)}</span>
+      `));
+    }
+    $(this.targetId).append($skillsTags);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/components/skills.js":
+/*!*************************************!*\
+  !*** ./src/js/components/skills.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Skills; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _json_skills_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../json/skills.json */ "./src/json/skills.json");
+/* harmony import */ var _json_skills_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_json_skills_json__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Skills {
+  constructor(targetId) {
+    this.targetId = targetId;
+  }
+
+  render() {
+    let $skills = $(`
+    <div class="card">
+      <div class="card-content skills-content">
+        <h3 class="title is-4">Skills</h3>
+        <div class="content">
+        </div>
+      </div>
+    </div>
+    `);
+
+    let $skillsContents = $skills.find(".content");
+    for (let skill of _json_skills_json__WEBPACK_IMPORTED_MODULE_1___default.a) {
+      $skillsContents.append($(`
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(skill.technology)}:</strong> <br />
+              <progress
+                class="progress is-primary"
+                value="${_utils__WEBPACK_IMPORTED_MODULE_0__["default"].escapeHtml(skill.degreeOfSkill)}"
+                max="100"
+              ></progress>
+            </p>
+          </div>
+        </div>
+      </article>
+      `));
+    }
+
+    $(this.targetId).append($skills);
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -10579,24 +12033,231 @@ class NavigationBar {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_navigation_bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/navigation-bar */ "./src/js/components/navigation-bar.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_navigation_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/navigation-bar */ "./src/js/components/navigation-bar.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
+/* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/about */ "./src/js/components/about.js");
+/* harmony import */ var _components_skills_tags__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/skills-tags */ "./src/js/components/skills-tags.js");
+/* harmony import */ var _components_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/services */ "./src/js/components/services.js");
+/* harmony import */ var _components_resume__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/resume */ "./src/js/components/resume.js");
+/* harmony import */ var _components_projects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/projects */ "./src/js/components/projects.js");
+/* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/contact */ "./src/js/components/contact.js");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/footer */ "./src/js/components/footer.js");
+
+
+
+
+
+
+
+
+
+
 
 
 $(() => {
-  // The following code is based off a toggle menu by @Bradcomp
-  // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
-  // var burger = document.querySelector(".burger");
-  // var menu = document.querySelector("#" + burger.dataset.target);
-  // burger.addEventListener("click", function() {
-  //   burger.classList.toggle("is-active");
-  //   menu.classList.toggle("is-active");
-  // });
+  // Setting project dialog behavior.
+  $("#project-modal .modal-background").on("click", () => {
+    closeProjectModalDialog();
+  });
+  $("#project-modal .modal-card .modal-card-foot #close-dialog").on("click", () => {
+    closeProjectModalDialog();
+  });
+  $("#project-modal .modal-card header .delete").on("click", () => {
+    closeProjectModalDialog();
+  });
+  function closeProjectModalDialog() {
+    $("#project-modal").removeClass("is-active");
+  }
 
-  let navigationBar = new _components_navigation_bar__WEBPACK_IMPORTED_MODULE_0__["default"]("#navigation-bar");
+  // Render navigation bar.
+  let navigationBar = new _components_navigation_bar__WEBPACK_IMPORTED_MODULE_1__["default"]("#navigation-bar");
   navigationBar.render();
+
+  // Render header.
+  let header = new _components_header__WEBPACK_IMPORTED_MODULE_2__["default"]("#header");
+  header.render();
+
+  // Render about.
+  let about = new _components_about__WEBPACK_IMPORTED_MODULE_3__["default"]("#about-area");
+  about.render();
+
+  // Render skills tags.
+  let skillsTags = new _components_skills_tags__WEBPACK_IMPORTED_MODULE_4__["default"]("#skills-tags");
+  skillsTags.render();
+
+  // Render services.
+  let services = new _components_services__WEBPACK_IMPORTED_MODULE_5__["default"]("#services");
+  services.render();
+
+  // Render resume.
+  let resume = new _components_resume__WEBPACK_IMPORTED_MODULE_6__["default"]("#resume");
+  resume.render();
+
+  // Render projects.
+  let projects = new _components_projects__WEBPACK_IMPORTED_MODULE_7__["default"]("#projects");
+  projects.render();
+
+  // Render contact.
+  let contact = new _components_contact__WEBPACK_IMPORTED_MODULE_8__["default"]("#contact");
+  contact.render();
+
+  // Render footer.
+  let footer = new _components_footer__WEBPACK_IMPORTED_MODULE_9__["default"]("#footer");
+  footer.render();
 });
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Utils; });
+class Utils {
+  static arrayToHtml(arr) {
+    if (arr instanceof Array) {
+      let newLineWord = "<br>";
+      let html = "";
+      for (let line of arr) {
+        html += `${this.escapeHtml(line)}${newLineWord}`;
+      }
+      let lastIndex = html.lastIndexOf(newLineWord);
+      html = html.substring(0, lastIndex);
+      return html;
+    } else {
+      return arr;
+    }
+  }
+
+  static escapeHtml(str){
+    str = str.replace(/&/g, '&amp;');
+    str = str.replace(/>/g, '&gt;');
+    str = str.replace(/</g, '&lt;');
+    str = str.replace(/"/g, '&quot;');
+    str = str.replace(/'/g, '&#x27;');
+    str = str.replace(/`/g, '&#x60;');
+    return str;
+  }
+}
+
+/***/ }),
+
+/***/ "./src/json/about-title.json":
+/*!***********************************!*\
+  !*** ./src/json/about-title.json ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"title":"About Me","subTitle":"Behind-the-scenes supporter.","selfIntroduction":["Web and Windows Desktop Application developer with more than 5 years of experience.","And I'm good at developing for the user as well as for the project member.","Looking for an opportunity to work and upgrade, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the society."]}
+
+/***/ }),
+
+/***/ "./src/json/contact.json":
+/*!*******************************!*\
+  !*** ./src/json/contact.json ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"title":"Contact","subTitle":"Get in touch","nameLabel":"Name","subjectLabel":"Subject","messageLabel":"Message","submitLabel":"Submit"}
+
+/***/ }),
+
+/***/ "./src/json/header.json":
+/*!******************************!*\
+  !*** ./src/json/header.json ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"greeting":"Hello! I am ","title":"Koki Nakamura","subTitle":"Full stack Web Developer, Desktop application developer and Teck Lead"}
+
+/***/ }),
+
+/***/ "./src/json/navigation-bar-items.json":
+/*!********************************************!*\
+  !*** ./src/json/navigation-bar-items.json ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = [{"link":"about","icon":"fas fa-info","caption":"About"},{"link":"services","icon":"fas fa-bars","caption":"Services"},{"link":"resume","icon":"fas fa-file-alt","caption":"Resume"},{"link":"projects","icon":"fas fa-th-list","caption":"Projects"},{"link":"contact","icon":"fas fa-envelope","caption":"Contact"}]
+
+/***/ }),
+
+/***/ "./src/json/profile.json":
+/*!*******************************!*\
+  !*** ./src/json/profile.json ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"address":"Gordon, New South Wales, Australia","phone":"+61-423-856-796","email":"koki.nakamura22@gmail.com","links":[{"caption":"GitHub","url":"https://github.com/koki-nakamura22/"},{"caption":"LinkedIn","url":"https://www.linkedin.com/in/koki-nakamura/"},{"caption":"Twitter","url":"https://twitter.com/kai_j_levia/"},{"caption":"Facebook","url":"https://www.facebook.com/koki.nakamura22/"},{"caption":"Blog","url":"http://j-levia.hatenablog.jp/"}]}
+
+/***/ }),
+
+/***/ "./src/json/projects.json":
+/*!********************************!*\
+  !*** ./src/json/projects.json ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"title":"Projects","subTitle":"The project that I was engaged in","projectsLabel":{"projectName":"Project Name","summary":"Summary","term":"Term","usedProgrammingLanguageAndLibrary":"Used programming language and library","usedDatabase":"Used Database","usedTools":"Used tools","role":"Role","workInCharge":"Work in charge"},"projects":[{"projectName":"Schedule management web system development for cleaning industry","summary":"Web system development to enable semi-automatic execution of schedule management manually done on the Web system.","termFrom":"2018/09","termTo":"2018/10","usedProgrammingLanguageAndLibrary":["HTML5 / CSS3 / JavaScript(ECMAScript5) / jQuery","Java8 / Doma2","SQL / PL/pgSQL"],"usedDatabase":"PostgreSQL","usedTools":"Eclipse / Tomcat / Apache Subversion","role":"Web Front-end and Back-end Developer / Teck Lead","workInCharge":["I did Mainly responsible for developing screens for users to schedule registration by drag & drop operation and development of Web API called from screen.","Also, I did following works.","- Added functions to screens other than the responsible screen.","- Technically supported to project members.","- Fixed original project framework."]},{"projectName":"Cloud version processing machine monitoring system dashboard function addition renovation","summary":["Added function to cloud version processing machine monitoring system dashboard.","Development of an application that creates a form based on data outputted from a dashboard."],"termFrom":"2018/07","termTo":"2018/09","usedProgrammingLanguageAndLibrary":["HTML5 / CSS3 / JavaScript(ECMAScript5) / jQuery","Excel VBA"],"usedDatabase":"","usedTools":"Eclipse / Tomcat / Excel / Apache Subversion","role":"Web Front-end Developer","workInCharge":"TODO: Must write this detail."},{"projectName":"Cloud version processing machine monitoring system dashboard development","summary":"TODO: Must write this detail.","termFrom":"2018/04","termTo":"2018/06","usedProgrammingLanguageAndLibrary":"TODO: Must write this detail.","usedDatabase":"TODO: Must write this detail.","usedTools":"TODO: Must write this detail.","role":"TODO: Must write this detail.","workInCharge":"TODO: Must write this detail."},{"projectName":"Intranet version processing machine monitoring system dashboard development","summary":"TODO: Must write this detail.","termFrom":"2017/11","termTo":"2018/04","usedProgrammingLanguageAndLibrary":"TODO: Must write this detail.","usedDatabase":"TODO: Must write this detail.","usedTools":"TODO: Must write this detail.","role":"TODO: Must write this detail.","workInCharge":"TODO: Must write this detail."},{"projectName":"PDM system operation support and maintenance","summary":"TODO: Must write this detail.","termFrom":"2015/04","termTo":"2017/10","usedProgrammingLanguageAndLibrary":"TODO: Must write this detail.","usedDatabase":"TODO: Must write this detail.","usedTools":"TODO: Must write this detail.","role":"TODO: Must write this detail.","workInCharge":"TODO: Must write this detail."},{"projectName":"PDM system replace","summary":"TODO: Must write this detail.","termFrom":"2015/08","termTo":"2017/10","usedProgrammingLanguageAndLibrary":"C# / VB6 / SQL / PL/SQL / Oracle Forms","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2013 / Object Browser / TestComplete / Apache Subversion","role":"Desktop Application Developer / Teck Lead","workInCharge":["- Make development rule","- Development a original framework use in this project for replace business form's output application","- Make test rule and make that document","- Education of project members","- Technical support for project members","- develpment a replace desktop application (OracleForms -> C#)","- develpment a replace business form's output application (OracleForms / VB6 -> C#)"]},{"projectName":"Drawing preview web system development","summary":"Development of the drawing preview Web system usable with a tablet terminal.","termFrom":"2017/07","termTo":"2017/09","usedProgrammingLanguageAndLibrary":"C# / Dapper / Oracle Data Provider for .NET","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2013 / Object Browser / Apache Subversion","role":"Teck Lead","workInCharge":["- Explanation of how to use own company standard C# framework","- Technical support for project members"]},{"projectName":"Development of our own company standard framework","summary":"Develop own company standard development framework of C# and Java.","termFrom":"2017/01","termTo":"2017/06","usedProgrammingLanguageAndLibrary":"C# / Dapper / log4net / Oracle Data Provider for .NET / Npgsql","usedDatabase":"","usedTools":"Visual Studio 2013 / Apache Subversion","role":"Developer","workInCharge":["- Requirement Definition","- Investigate the library to use","- External / Internal design","- Own company standard C# framework development","- Creating a sample using own company standard C# framework"]},{"projectName":"Function porting from other system to PDM system","summary":"Function porting from other system to PDM system with the post transfer.","termFrom":"2016/10","termTo":"2016/12","usedProgrammingLanguageAndLibrary":"C# / VB6 / SQL / PL/SQL","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2013 / Visual Basic 6 / Object Browser / Apache Subversion","role":"Project Leader / Teck Lead / Desktop Application Developer","workInCharge":["- Requirement Definition","- External / Internal design","- Development a data making function to output in business form","- Development a business form output function","- Design and make business form format","- Support and management for project member"]},{"projectName":"Development of production control system for China","summary":"Development a system to cooperate the production management system of the China factory with the PDM system of Japan.","termFrom":"2016/02","termTo":"2016/04","usedProgrammingLanguageAndLibrary":"C#","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2013 / Apache Subversion","role":"Desktop Application Developer","workInCharge":["- Two search screens development","- Two kinds of business form(Excel format) output function development","- Make a user manual"]},{"projectName":"Inventory management system development for Taiwan","summary":"Inventory management system development for Taiwan.","termFrom":"2015/06","termTo":"2015/07","usedProgrammingLanguageAndLibrary":"C#","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2013 / Apache Subversion","role":"Desktop Application Developer","workInCharge":["- Business form's make and output function development","- One screen desktop application development"]},{"projectName":"Development of business form development framework","summary":"Development of business form development framework for project member.","termFrom":"2015/06","termTo":"2015/06","usedProgrammingLanguageAndLibrary":"C#","usedDatabase":"","usedTools":"Visual Studio 2013 / VB-Report 8 / Apache Subversion","role":"Tech Lead / Application Developer","workInCharge":["- Investigation of VB-Report 8","- Design of business form development framework","- Development and maintenance a business form development framework"]},{"projectName":"Drawing management system testing","summary":"Drawing management system testing.","termFrom":"2015/04","termTo":"2015/05","usedProgrammingLanguageAndLibrary":"","usedDatabase":"Oracle Database","usedTools":"","role":"Tester","workInCharge":"I did test based on the created test case and summarize the results."},{"projectName":"Accounting package soft testing","summary":"Accounting package soft testing.","termFrom":"2015/03","termTo":"2015/03","usedProgrammingLanguageAndLibrary":"","usedDatabase":"Unclear","usedTools":"Secret","role":"Tester","workInCharge":"I did test based on the created test case and summarize the results."},{"projectName":"Development of function addition to production management system","summary":"Development of function addition to production management system.","termFrom":"2015/02","termTo":"2015/02","usedProgrammingLanguageAndLibrary":"","usedDatabase":"Oracle Database","usedTools":"Visual Studio 2008","role":"Desktop Application developer","workInCharge":["- Specifications making of the function to add","- Development of additional functions"]},{"projectName":"System linkage infrastructure system testing for communication industry","summary":"Test of a system performing data cooperation between DB.","termFrom":"2015/01","termTo":"2015/01","usedProgrammingLanguageAndLibrary":"SQL","usedDatabase":"Oracle Database","usedTools":"DataSpider Servista / Salesforce's product","role":"Tester","workInCharge":"I did test based on the created test case and summarize the results."},{"projectName":"Engineering works multiplication package software development","summary":["- Engineering works multiplication package software development and maintenance","- Engineering works multiplication package software's neighboring device development and maintenance"],"termFrom":"2013/06","termTo":"2014/12","usedProgrammingLanguageAndLibrary":"C++(98, 11) / SQL / Excel VBA","usedDatabase":"Firebird","usedTools":"C++ Builder(5, XE3) / Excel 2010","role":"Desktop Application Developer","workInCharge":["- Development and maintenance a automatic version up tool for engineering works multiplication package software","- Development and maintenane a automatic data update tool used by engineering works multiplication package software","- Development and maintenane a Disposal ground judgment tool pro"]}]}
+
+/***/ }),
+
+/***/ "./src/json/resume.json":
+/*!******************************!*\
+  !*** ./src/json/resume.json ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"title":"Resume","subTitle":"More about my past","downloadButtonLabel":"Download My Resume","resumeFile":"./../docs/Resume_KokiNakamura.docx"}
+
+/***/ }),
+
+/***/ "./src/json/services.json":
+/*!********************************!*\
+  !*** ./src/json/services.json ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {"title":"Services","description":"What can I do for you?","services":[{"title":"Windows Desktop Application Development","detail":["Develop Windows Desktop Application using C# and Oracle Database or postgreSQL.","Or can develope without using a databases."]},{"title":"Front End Web Development","detail":"Develop Front End using latest standards with HTML5/CSS3 with added funtionality using JavaScript and jQuery."},{"title":"Back End Web Development","detail":"Develop Back End application using C#(ASP.NET Web API) or Java and Oracle Database or postgreSQL."}]}
+
+/***/ }),
+
+/***/ "./src/json/skills-tags.json":
+/*!***********************************!*\
+  !*** ./src/json/skills-tags.json ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = [{"skill":"C#"},{"skill":"Windows Forms"},{"skill":"ASP.NET Web API"},{"skill":"Visual Studio"},{"skill":"Java"},{"skill":"Eclipse"},{"skill":"SQL"},{"skill":"PL/SQL"},{"skill":"PL/pgSQL"},{"skill":"HTML5"},{"skill":"CSS3"},{"skill":"jQuery"},{"skill":"Bulma"},{"skill":"Webpack"},{"skill":"Oracle Database"},{"skill":"PostgreSQL"},{"skill":"Git"},{"skill":"Apache Subversion"},{"skill":"Visual Studio Code"}]
+
+/***/ }),
+
+/***/ "./src/json/skills.json":
+/*!******************************!*\
+  !*** ./src/json/skills.json ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = [{"technology":"C#","degreeOfSkill":"80"},{"technology":"Java","degreeOfSkill":"40"},{"technology":"HTML5/CSS","degreeOfSkill":"60"},{"technology":"JavaScript","degreeOfSkill":"60"},{"technology":"Databases","degreeOfSkill":"60"}]
 
 /***/ }),
 

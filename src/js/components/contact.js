@@ -1,6 +1,6 @@
 import Utils from "../utils";
-import profileData from "../../../public/json/profile.json";
-import contactData from "../../../public/json/contact.json";
+import profileData from "../../json/profile.json";
+import contactData from "../../json/contact.json";
 
 export default class Contact {
   constructor(targetId) {

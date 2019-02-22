@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import skillsTagsData from "../../../public/json/skills-tags.json";
+import skillsTagsData from "../../json/skills-tags.json";
 
 export default class SkillsTags {
   constructor(targetId) {

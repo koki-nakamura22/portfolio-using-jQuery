@@ -23,6 +23,11 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ["file-loader"]
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   }

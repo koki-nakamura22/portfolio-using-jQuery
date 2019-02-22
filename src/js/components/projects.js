@@ -1,6 +1,6 @@
 import Utils from "../utils";
 import ProjectsItem from "./projects-item";
-import projectsData from "../../../public/json/projects.json";
+import projectsData from "../../json/projects.json";
 
 export default class Projects {
   constructor(targetId) {

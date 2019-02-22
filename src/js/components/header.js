@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import headerData from "../../../public/json/header.json";
+import headerData from "../../json/header.json";
 
 export default class Header {
   constructor(targetId) {

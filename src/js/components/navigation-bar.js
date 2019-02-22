@@ -1,5 +1,5 @@
 import NavigationBarItem from "./navigation-bar-item";
-import barItems from "../../../public/json/navigation-bar-items.json";
+import barItems from "../../json/navigation-bar-items.json";
 
 export default class NavigationBar {
   constructor(targetId) {

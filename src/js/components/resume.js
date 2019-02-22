@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import resumeData from "../../../public/json/resume.json";
+import resumeData from "../../json/resume.json";
 
 export default class Resume {
   constructor(targetId) {

@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import servicesData from "../../../public/json/services.json";
+import servicesData from "../../json/services.json";
 
 export default class Services {
   constructor(targetId) {

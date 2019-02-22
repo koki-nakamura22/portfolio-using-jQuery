@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import profileData from "../../../public/json/profile.json";
+import profileData from "../../json/profile.json";
 
 export default class Profile {
   constructor(targetId) {

@@ -1,5 +1,5 @@
 import Utils from "../utils";
-import aboutTitleData from "../../../public/json/about-title.json";
+import aboutTitleData from "../../json/about-title.json";
 
 export default class AboutTitle {
   constructor(targetId) {
