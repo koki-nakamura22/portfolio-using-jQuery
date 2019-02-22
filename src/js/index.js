@@ -1,3 +1,5 @@
+import css from "./../css/index.css";
+
 import NavigationBar from "./components/navigation-bar";
 import Header from "./components/header";
 import About from "./components/about";
