@@ -1,5 +1,4 @@
-import Utils from "../utils";
-import profilePictureData from "../../../public/json/profile-picture.json";
+import selfPortrait from "../../images/self-face-photos.jpg";
 
 export default class ProfilePicture {
   constructor(targetId) {
@@ -11,8 +10,8 @@ export default class ProfilePicture {
     <div class="card-image">
       <figure class="image is-4by3">
         <img
-          src="${Utils.escapeHtml(profilePictureData.imageUrl)}"
-          alt="${Utils.escapeHtml(profilePictureData.alt)}"
+          src="${selfPortrait}"
+          alt=""
         />
       </figure>
     </div>
