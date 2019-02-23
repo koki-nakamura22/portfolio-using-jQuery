@@ -28,12 +28,18 @@ export default class ProjectsItem extends BaseComponent {
             </div>
             <div>
               <strong>${Utils.escapeHtml(labels.term)}</strong>
-              <p>${Utils.escapeHtml(this.projectData.termFrom)} ~ ${Utils.escapeHtml(this.projectData.termTo)}</p>
+              <p>${Utils.escapeHtml(
+                this.projectData.termFrom
+              )} ~ ${Utils.escapeHtml(this.projectData.termTo)}</p>
               <br>
             </div>
             <div>
-              <strong>${Utils.escapeHtml(labels.usedProgrammingLanguageAndLibrary)}</strong>
-              <p>${Utils.arrayToHtml(this.projectData.usedProgrammingLanguageAndLibrary)}</p>
+              <strong>${Utils.escapeHtml(
+                labels.usedProgrammingLanguageAndLibrary
+              )}</strong>
+              <p>${Utils.arrayToHtml(
+                this.projectData.usedProgrammingLanguageAndLibrary
+              )}</p>
             </div>
           </div>
         </div>
@@ -47,23 +53,37 @@ export default class ProjectsItem extends BaseComponent {
     </div>
     `);
     $projectItem.find(".card-footer .card-footer-item").on("click", () => {
-      let $dialogTitle = $("#project-modal .modal-card .modal-card-head .modal-card-title");
+      let $dialogTitle = $(
+        "#project-modal .modal-card .modal-card-head .modal-card-title"
+      );
       $dialogTitle.text(Utils.escapeHtml(this.projectData.projectName));
-      
+
       let labels = projectsData.projectsLabel;
       let $dialogBody = $("#project-modal .modal-card .modal-card-body");
       $dialogBody.empty();
-      $dialogBody.append($(`
+      $dialogBody.append(
+        $(`
       <div class="content">
         ${generateHTMLCode(labels.summary, this.projectData.summary)}
-        ${generateTermHTMLCode(labels.term, this.projectData.termFrom, this.projectData.termTo)}
-        ${generateHTMLCode(labels.usedProgrammingLanguageAndLibrary, this.projectData.usedProgrammingLanguageAndLibrary)}
+        ${generateTermHTMLCode(
+          labels.term,
+          this.projectData.termFrom,
+          this.projectData.termTo
+        )}
+        ${generateHTMLCode(
+          labels.usedProgrammingLanguageAndLibrary,
+          this.projectData.usedProgrammingLanguageAndLibrary
+        )}
         ${generateHTMLCode(labels.usedDatabase, this.projectData.usedDatabase)}
         ${generateHTMLCode(labels.usedTools, this.projectData.usedTools)}
         ${generateHTMLCode(labels.role, this.projectData.role)}
-        ${generateHTMLCode(labels.workInCharge, this.projectData.workInCharge)}      
+        ${generateHTMLCode(
+          labels.workInCharge,
+          this.projectData.workInCharge
+        )}      
       </div>
-      `));
+      `)
+      );
 
       $("#project-modal").addClass("is-active");
 
@@ -71,7 +91,7 @@ export default class ProjectsItem extends BaseComponent {
         return `
         <h1>${Utils.escapeHtml(label)}</h1>
         <p>
-          ${Utils.arrayToHtml(detail)}
+          ${Utils.arrayToHtml(detail == "" ? "Nothing" : detail)}
         </p>
         `;
       }
