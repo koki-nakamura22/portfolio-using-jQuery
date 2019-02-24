@@ -24,7 +24,7 @@
       ],
       "usedDatabase": "PostgreSQL",
       "usedTools": "Eclipse / Tomcat / Apache Subversion",
-      "role": "Web Front-end and Back-end Developer / Teck Lead",
+      "role": "Web Front-end and Back-end Developer / Tech Lead",
       "workInCharge": [
         "I did Mainly responsible for developing screens for users to schedule registration by drag & drop operation and development of Web API called from screen.",
         "Also, I did following works.",
@@ -85,7 +85,7 @@
       "usedProgrammingLanguageAndLibrary": "C# / VB.NET / VB6 / SQL / PL/SQL / Oracle Forms",
       "usedDatabase": "Oracle Database",
       "usedTools": "Visual Studio 2005, 2013 / Visual Basic 6 / Object Browser / Apache Subversion",
-      "role": "Desktop Application Developer  / Teck Lead",
+      "role": "Desktop Application Developer  / Tech Lead",
       "workInCharge": [
         "- Maintenance of Windows Desktop Application",
         "- Customer support",
@@ -101,7 +101,7 @@
       "usedProgrammingLanguageAndLibrary": "C# / VB6 / SQL / PL/SQL / Oracle Forms",
       "usedDatabase": "Oracle Database",
       "usedTools": "Visual Studio 2013 / Object Browser / TestComplete / Apache Subversion",
-      "role": "Desktop Application Developer / Teck Lead",
+      "role": "Desktop Application Developer / Tech Lead",
       "workInCharge": [
         "- Make development rule",
         "- Development a original framework use in this project for replace business form's output application",
@@ -120,7 +120,7 @@
       "usedProgrammingLanguageAndLibrary": "C# / Dapper / Oracle Data Provider for .NET",
       "usedDatabase": "Oracle Database",
       "usedTools": "Visual Studio 2013 / Object Browser / Apache Subversion",
-      "role": "Teck Lead",
+      "role": "Tech Lead",
       "workInCharge": [
         "- Explanation of how to use own company standard C# framework",
         "- Technical support for project members"
@@ -151,7 +151,7 @@
       "usedProgrammingLanguageAndLibrary": "C# / VB6 / SQL / PL/SQL",
       "usedDatabase": "Oracle Database",
       "usedTools": "Visual Studio 2013 / Visual Basic 6 / Object Browser / Apache Subversion",
-      "role": "Project Leader / Teck Lead / Desktop Application Developer",
+      "role": "Project Leader / Tech Lead / Desktop Application Developer",
       "workInCharge": [
         "- Requirement Definition",
         "- External / Internal design",
