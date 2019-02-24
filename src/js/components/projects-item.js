@@ -1,5 +1,6 @@
 import BaseComponent from "./base-component";
 import Utils from "../utils";
+import Moment from "moment";
 import projectsData from "../../json/projects.json";
 
 export default class ProjectsItem extends BaseComponent {
@@ -29,8 +30,8 @@ export default class ProjectsItem extends BaseComponent {
             <div>
               <strong>${Utils.escapeHtml(labels.term)}</strong>
               <p>${Utils.escapeHtml(
-                this.projectData.termFrom
-              )} ~ ${Utils.escapeHtml(this.projectData.termTo)}</p>
+                convMMMMYYYY(this.projectData.termFrom)
+              )} ~ ${Utils.escapeHtml(convMMMMYYYY(this.projectData.termTo))}</p>
               <br>
             </div>
             <div>
@@ -99,12 +100,18 @@ export default class ProjectsItem extends BaseComponent {
       function generateTermHTMLCode(label, from, to) {
         let html = `
         <h1>${Utils.escapeHtml(label)}</h1>
-        <p>${Utils.escapeHtml(from)} ~ ${Utils.escapeHtml(to)}</p>
+        <p>${Utils.escapeHtml(convMMMMYYYY(from))} ~ ${Utils.escapeHtml(convMMMMYYYY(to))}</p>
         `;
         return html;
       }
     });
 
     $(this.targetId).append($projectItem);
+
+    function convMMMMYYYY(dateStr) {
+      let date = new Date(dateStr);
+      let isoDate = new Date(date.toISOString());
+      return Moment(date.toISOString()).format("MMMM YYYY");
+    }
   }
 }
