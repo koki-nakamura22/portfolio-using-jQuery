@@ -3,6 +3,14 @@
   "description": "What can I do for you?",
   "services": [
     {
+      "title": "Front-End Web Development",
+      "detail": "Develop Front-End using latest standards with HTML5/CSS3 with added funtionality using JavaScript and jQuery."
+    },
+    {
+      "title": "Back-End Web Development",
+      "detail": "Develop Back-End application using C#(ASP.NET Web API) or Java and Oracle Database or postgreSQL."
+    },
+    {
       "title": "Windows Desktop Application Development",
       "detail": [
         "Develop Windows Desktop Application using C# and Oracle Database or postgreSQL.",
@@ -10,12 +18,11 @@
       ]
     },
     {
-      "title": "Front End Web Development",
-      "detail": "Develop Front End using latest standards with HTML5/CSS3 with added funtionality using JavaScript and jQuery."
-    },
-    {
-      "title": "Back End Web Development",
-      "detail": "Develop Back End application using C#(ASP.NET Web API) or Java and Oracle Database or postgreSQL."
+      "title": "Tech Lead",
+      "detail": [
+        "Develop a framework for the project and create development rules.",
+        "Also support and educate project members and select the technology use in the project."
+      ]
     }
   ]
 }
