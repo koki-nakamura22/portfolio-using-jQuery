@@ -31,7 +31,9 @@ export default class ProjectsItem extends BaseComponent {
               <strong>${Utils.escapeHtml(labels.term)}</strong>
               <p>${Utils.escapeHtml(
                 convMMMMYYYY(this.projectData.termFrom)
-              )} ~ ${Utils.escapeHtml(convMMMMYYYY(this.projectData.termTo))}</p>
+              )} ~ ${Utils.escapeHtml(
+      convMMMMYYYY(this.projectData.termTo)
+    )}</p>
               <br>
             </div>
             <div>
@@ -39,7 +41,9 @@ export default class ProjectsItem extends BaseComponent {
                 labels.usedProgrammingLanguageAndLibrary
               )}</strong>
               <p>${Utils.arrayToHtml(
-                Utils.convEmptyStrToNothing(this.projectData.usedProgrammingLanguageAndLibrary)
+                Utils.convEmptyStrToNothing(
+                  this.projectData.usedProgrammingLanguageAndLibrary
+                )
               )}</p>
             </div>
           </div>
@@ -87,6 +91,7 @@ export default class ProjectsItem extends BaseComponent {
       );
 
       $("#project-modal").addClass("is-active");
+      $dialogBody.scrollTop(0);
 
       function generateHTMLCode(label, detail) {
         return `
@@ -100,7 +105,9 @@ export default class ProjectsItem extends BaseComponent {
       function generateTermHTMLCode(label, from, to) {
         let html = `
         <h1>${Utils.escapeHtml(label)}</h1>
-        <p>${Utils.escapeHtml(convMMMMYYYY(from))} ~ ${Utils.escapeHtml(convMMMMYYYY(to))}</p>
+        <p>${Utils.escapeHtml(convMMMMYYYY(from))} ~ ${Utils.escapeHtml(
+          convMMMMYYYY(to)
+        )}</p>
         `;
         return html;
       }
