@@ -3,22 +3,23 @@ const commonConfig = require("./webpack.config.common.js");
 const path = require("path");
 
 module.exports = merge(commonConfig, {
+  watch: true,
   mode: "development",
-  devtool: "inline-module-source-map",
+  devtool: "source-map",
+  devServer: {
+    hot: true,
+    inline: true,
+    contentBase: path.join(__dirname, "../public"),
+    watchContentBase: true,
+    open: "Chrome",
+    openPage: "index.html",
+    port: 18080
+  },
   module: {
     rules: [
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              publicPath: "./images",
-              outputPath: "./../images"
-            },
-          },
-        ],
+        use: ["file-loader"]
       }
     ]
   }
