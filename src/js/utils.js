@@ -23,4 +23,8 @@ export default class Utils {
     str = str.replace(/`/g, '&#x60;');
     return str;
   }
+
+  static convEmptyStrToNothing(str) {
+    return str == "" ? "Nothing" : str;
+  }
 }

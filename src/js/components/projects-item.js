@@ -38,7 +38,7 @@ export default class ProjectsItem extends BaseComponent {
                 labels.usedProgrammingLanguageAndLibrary
               )}</strong>
               <p>${Utils.arrayToHtml(
-                this.projectData.usedProgrammingLanguageAndLibrary
+                Utils.convEmptyStrToNothing(this.projectData.usedProgrammingLanguageAndLibrary)
               )}</p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default class ProjectsItem extends BaseComponent {
         return `
         <h1>${Utils.escapeHtml(label)}</h1>
         <p>
-          ${Utils.arrayToHtml(detail == "" ? "Nothing" : detail)}
+          ${Utils.arrayToHtml(Utils.convEmptyStrToNothing(detail))}
         </p>
         `;
       }
