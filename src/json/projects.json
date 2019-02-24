@@ -48,44 +48,54 @@
       "usedDatabase": "",
       "usedTools": "Eclipse / Tomcat / Excel / Apache Subversion",
       "role": "Web Front-end Developer",
-      "workInCharge": "TODO: Must write this detail."
+      "workInCharge": [
+        "- Added function to web dashboard.",
+        "- Development of business form and macro on Excel"
+      ]
     },
     {
       "projectName": "Cloud version processing machine monitoring system dashboard development",
-      "summary": "TODO: Must write this detail.",
+      "summary": "Development of Cloud version processing machine monitoring system dashboard to be used in several countries of the world.",
       "termFrom": "2018/04",
       "termTo": "2018/06",
-      "usedProgrammingLanguageAndLibrary": "TODO: Must write this detail.",
-      "usedDatabase": "TODO: Must write this detail.",
-      "usedTools": "TODO: Must write this detail.",
-      "role": "TODO: Must write this detail.",
-      "workInCharge": "TODO: Must write this detail."
+      "usedProgrammingLanguageAndLibrary": "HTML5 / CSS3 / JavaScript / jQuery",
+      "usedDatabase": "Postgre SQL",
+      "usedTools": "Visual Studio Code / Eclipse / pgAdmin / Apache Subversion",
+      "role": "Web Front-end Developer",
+      "workInCharge": "- Development of web dashboard (Responsive design support)"
     },
     {
       "projectName": "Intranet version processing machine monitoring system dashboard development",
-      "summary": "TODO: Must write this detail.",
+      "summary": "Development of Intranet version processing machine monitoring system dashboard to be used in several countries of the world.",
       "termFrom": "2017/11",
       "termTo": "2018/04",
-      "usedProgrammingLanguageAndLibrary": "TODO: Must write this detail.",
-      "usedDatabase": "TODO: Must write this detail.",
-      "usedTools": "TODO: Must write this detail.",
-      "role": "TODO: Must write this detail.",
-      "workInCharge": "TODO: Must write this detail."
+      "usedProgrammingLanguageAndLibrary": "HTML5 / CSS3 / JavaScript / jQuery",
+      "usedDatabase": "Postgre SQL",
+      "usedTools": "Visual Studio Code / Eclipse / pgAdmin / Apache Subversion",
+      "role": "Web Front-end Developer",
+      "workInCharge": [
+        "- Development of web dashboard (Responsive design support)"
+      ]
     },
     {
       "projectName": "PDM system operation support and maintenance",
-      "summary": "TODO: Must write this detail.",
+      "summary": "Operation support and maintenance of PDM system used in Japan.",
       "termFrom": "2015/04",
       "termTo": "2017/10",
-      "usedProgrammingLanguageAndLibrary": "TODO: Must write this detail.",
-      "usedDatabase": "TODO: Must write this detail.",
-      "usedTools": "TODO: Must write this detail.",
-      "role": "TODO: Must write this detail.",
-      "workInCharge": "TODO: Must write this detail."
+      "usedProgrammingLanguageAndLibrary": "C# / VB.NET / VB6 / SQL / PL/SQL / Oracle Forms",
+      "usedDatabase": "Oracle Database",
+      "usedTools": "Visual Studio 2005, 2013 / Visual Basic 6 / Object Browser / Apache Subversion",
+      "role": "Desktop Application Developer  / Teck Lead",
+      "workInCharge": [
+        "- Maintenance of Windows Desktop Application",
+        "- Customer support",
+        "- Education of project members",
+        "- Technical support for project members"
+      ]
     },
     {
       "projectName": "PDM system replace",
-      "summary": "TODO: Must write this detail.",
+      "summary": "Replacement of PDM system due to expiration of server support.",
       "termFrom": "2015/08",
       "termTo": "2017/10",
       "usedProgrammingLanguageAndLibrary": "C# / VB6 / SQL / PL/SQL / Oracle Forms",
