@@ -2,5 +2,5 @@
   "title": "Resume",
   "subTitle": "More about my past",
   "downloadButtonLabel": "Download My Resume",
-  "resumeFile": "./../docs/Resume_KokiNakamura.docx"
+  "resumeFile": "./docs/Resume_KokiNakamura.docx"
 }
