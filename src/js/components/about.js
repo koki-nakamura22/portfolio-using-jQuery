@@ -6,11 +6,6 @@ import Skills from "./skills";
 
 export default class About extends BaseComponent {
   render() {
-    let $about = $(`
-    <section class="section" id="about"></section>
-    `);
-    $(this.targetId).append($about);
-
     // Render title.
     let aboutTitle = new AboutTitle("#about-title");
     aboutTitle.render();
